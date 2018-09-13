@@ -1,0 +1,2 @@
+# Notes
+notes of programming
