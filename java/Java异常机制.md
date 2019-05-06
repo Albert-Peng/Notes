@@ -58,7 +58,7 @@ checked异常（编译时异常）可以在编译期中修复，期望程序可�
 
 - ClassNotFoundException产生的原因往往就是类路径下，没有需要的类，只需要将相关的类放到路径下或者添加依赖就能解决。
 
-#### NoClassDefError的产生原因
+#### 1.5.1 NoClassDefError的产生原因
 
 - 类没有打包进jar包中，或者manifest声明不正确；
 - classpath在运行时被覆盖，导致和编译时的classpath不一致；
@@ -66,7 +66,7 @@ checked异常（编译时异常）可以在编译期中修复，期望程序可�
 - 检查日志文件中是否有java.lang.ExceptionInInitializerError这样的错误，NoClassDefFoundError有可能是由于静态初始化失败导致的；
 - 如果你工作在J2EE的环境，有多个不同的类加载器，也可能导致NoClassDefFoundError
 
-#### NoClassDefFound的解决办法
+#### 1.5.2 NoClassDefFound的解决办法
 
 - 当发生由于缺少jar文件，或者jar文件没有添加到classpath，或者jar的文件名发生变更会导致java.lang.NoClassDefFoundError的错误。
 
@@ -128,7 +128,7 @@ public class TestException4 extends Exception{
   }
 ```
 
-## 3 Java注意点
+## 3 Java异常处理注意点
 
 - 尽量不要捕捉通用异常，而是捕捉特定异常，有利于获取更多的调试信息或者向外抛出
 
