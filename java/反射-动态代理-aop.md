@@ -33,4 +33,8 @@
 #### 静态代理和动态代理的思路
 ![静态代理](https://img-blog.csdnimg.cn/2018122621173213)  
 ![动态代理](https://img-blog.csdnimg.cn/2018122621173238)  
-动态代理在运行时生成字节码，并通过自定义classloader加载到JVM，实现动态代理
+动态代理在运行时生成字节码，并通过自定义classloader加载到JVM，实现动态代理，动态生成字节码的工具有ASM和Javassist等。
+
+### 2.2 JDK动态代理
+
+https://www.cnblogs.com/zuidongfeng/p/8735241.html  jdk动态代理实现原理
