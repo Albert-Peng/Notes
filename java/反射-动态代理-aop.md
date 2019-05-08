@@ -38,3 +38,49 @@
 ### 2.2 JDK动态代理
 
 https://www.cnblogs.com/zuidongfeng/p/8735241.html  jdk动态代理实现原理
+JDK的动态代理实现的思路和[Java动态代理和静态代理剖析](https://blog.csdn.net/qq_43171869/article/details/85268950)阐述的思路是一样的，在运行时生成代理类的字节码，并通过被代理类实例的classloader加载进虚拟机。在代理中，通过反射调用被代理类的方法，在InvocationHandler中实现调用方法前后的逻辑。下面编写一个使用JDK动态代理API的实例。  
+
+```java
+//代理接口
+public interface Subject {
+    void doSomething();
+}
+
+//需要被代理类
+public class RealSubject implements Subject {
+    @Override
+    public void doSomething() {
+        System.out.println("I am real subject and I am doing something!");
+    }
+}
+
+//实现InvocationHandler，定义代理方法的逻辑
+public class MyInvocationHandler implements InvocationHandler {
+
+    private Object target;
+
+    public MyInvocationHandler(Object target) {
+        this.target = target;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("before do something!");
+        Object object = method.invoke(target,args);
+        System.out.println("after do something!");
+        return object;
+    }
+}
+
+//调用Proxy类的静态方法生成代理对象，创建代理类时需要传入实现InvocationHandler接口的实例
+public class Main {
+    public static void main(String[] args) {
+        Subject realObject = new RealSubject();
+        MyInvocationHandler myInvocationHandler = new MyInvocationHandler(realObject);
+        //classloader、interfaces应该传入被代理类的
+        Subject proxyObject = (Subject) Proxy.newProxyInstance(realObject.getClass().getClassLoader(),realObject.getClass().getInterfaces(),myInvocationHandler);
+        proxyObject.doSomething();
+    }
+}
+
+```
