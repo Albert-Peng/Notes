@@ -94,4 +94,7 @@ CGLIB是一个代码生成库，它为没有实现接口的类提供代理，为
 
 - CGLIB底层：使用字节码处理框架ASM，来转换字节码并生成新的类。不鼓励直接使用ASM，因为它要求你必须对JVM内部结构包括class文件的格式和指令集都很熟悉。
 
-- CGLIB缺点：对于final方法，无法进行代理。
+- CGLIB缺点：对于final方法，无法进行代理。  
+
+
+https://www.jianshu.com/p/9a61af393e41?from=timeline&isappinstalled=0
