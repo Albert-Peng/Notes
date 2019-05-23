@@ -16,3 +16,7 @@ Java代码的运行需要JRE的支持，Java程序的运行主要有以下特点
 3. Java执行时解释执行和即时编译（Just-In-Time compilation，JIT）结合，翻译成机器码。对于热点代码采用即时编译，提高执行效率。
 即时编译器有C1和C1编译器，在编译时间和执行效率做了取舍，C1是客户端编译器，编译时间短效率较低；C2编译时间长，效率高。
 ![](https://static001.geekbang.org/resource/image/5e/3b/5ee351091464de78eed75438b6f9183b.png)
+
+## 02 Java的基本类型
+
+1. boolean类型，jvm映射成int类型，true对应1，false对应0
