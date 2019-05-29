@@ -20,3 +20,8 @@ Java代码的运行需要JRE的支持，Java程序的运行主要有以下特点
 ## 02 Java的基本类型
 
 1. boolean类型，jvm映射成int类型，true对应1，false对应0
+
+## 03 Java虚拟机是如何加Java类的
+### Java虚拟机加载Java类的过程
+![](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4057600875,3355003324&fm=26&gp=0.jpg)
+
