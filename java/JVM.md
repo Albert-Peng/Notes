@@ -23,5 +23,10 @@ Java代码的运行需要JRE的支持，Java程序的运行主要有以下特点
 
 ## 03 Java虚拟机是如何加Java类的
 ### Java虚拟机加载Java类的过程
-![](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4057600875,3355003324&fm=26&gp=0.jpg)
+![jvm加载Java类的步骤](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4057600875,3355003324&fm=26&gp=0.jpg)
+JVM加载类的步骤主要包括：加载、链接和初始化，初始类型由虚拟机定义、数组由虚拟机生成，泛型参数会在编译阶段擦除，所以jvm需要加载类、接口。  
+
+1. 加载：指将类的字节码流加载进JVM中，依靠类加载器和双亲委派模型完成加载。
+![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559149805779&di=12240aa7f91f800f0dfa5c0feb481f03&imgtype=0&src=http%3A%2F%2Fimage.mamicode.com%2Finfo%2F201807%2F20180703005054349154.png)
+
 
